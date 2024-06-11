@@ -1,8 +1,8 @@
 # Use an official Node.js runtime as the base image
-FROM node:14
+FROM node:22
 
 # Set the working directory inside the container
-WORKDIR /home/psykiller/dev/node_memory_game
+WORKDIR /app
 
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
@@ -19,5 +19,5 @@ RUN npm run build
 # Expose the application port
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application in development mode
+CMD ["npm", "run", "dev"]

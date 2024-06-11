@@ -1,17 +1,20 @@
 {
   "name": "node_memory_game",
   "version": "1.0.0",
-  "description": "",
+  "description": "An API created for a memory game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bryce-dev101/node_memory_game.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bryce Ferguson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bryce-dev101/node_memory_game/issues"

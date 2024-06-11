@@ -8,7 +8,7 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/memory-game
     volumes:
-      - .:/home/psykiller/dev/node_memory_game
+      - .:/app
 
   mongo:
     image: mongo
