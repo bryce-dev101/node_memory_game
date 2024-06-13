@@ -1,26 +1,30 @@
 import express from "express";
-import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import gameRoutes from "./routes/gameRoutes";
+import dotenv from "dotenv";
 
-const app = express();
+// Load environment variables from .env file
+dotenv.config();
 
-// Middleware
-app.use(bodyParser.json());
+const app = express(); // Ensure this line is present
 
-app.use("/api/game", gameRoutes);
+// Use express built-in middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-const mongoUri =
+// Use game routes
+app.use("/api/games", gameRoutes);
+
+const mongoUri: string =
   process.env.MONGO_URI || "mongodb://localhost:27017/memory-game";
 
-mongoose.connect(mongoUri).then(
-  () => {
+mongoose
+  .connect(mongoUri)
+  .then(() => {
     console.log("Connected to MongoDB");
-  },
-  (err) => {
-    console.log("Error connecting to MongoDB:", err);
-  }
-);
+  })
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB", err);
+  });
 
 export default app;

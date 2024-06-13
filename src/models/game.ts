@@ -3,7 +3,7 @@ import { Schema, model, Document } from "mongoose";
 // Interface for the game document structure
 interface IGame extends Document {
   player: string;
-  cards: { value: string; revealed: boolean }[];
+  cards: { value: string; revealed: boolean; position: string }[];
   matchedPairs: number;
   attempts: number;
   startTime: Date;
@@ -14,6 +14,7 @@ interface IGame extends Document {
 const cardSchema = new Schema({
   value: { type: String, required: true }, // The value of the card (e.g., 'Dog', 'Cat')
   revealed: { type: Boolean, default: false }, // Whether the card is revealed or not
+  position: { type: String, required: true }, // The position of the card
 });
 
 // Schema for the game document

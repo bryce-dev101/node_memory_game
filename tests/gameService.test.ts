@@ -39,14 +39,22 @@ describe("Game Service", () => {
   it("should create a new game with shuffled cards", async () => {
     const player = "Player1";
     const generatedCards = [
-      { value: "Dog", revealed: false },
-      { value: "Cat", revealed: false },
-      { value: "Bird", revealed: false },
-      { value: "Fish", revealed: false },
-      { value: "Horse", revealed: false },
-      { value: "Sheep", revealed: false },
-      { value: "Cow", revealed: false },
-      { value: "Pig", revealed: false },
+      { value: "Dog", revealed: false, position: 'card-1' },
+      { value: "Cat", revealed: false, position: 'card-2' },
+      { value: "Bird", revealed: false, position: 'card-3' },
+      { value: "Fish", revealed: false, position: 'card-4' },
+      { value: "Horse", revealed: false, position: 'card-5' },
+      { value: "Sheep", revealed: false, position: 'card-6' },
+      { value: "Cow", revealed: false, position: 'card-7' },
+      { value: "Pig", revealed: false, position: 'card-8' },
+      { value: "Dog", revealed: false, position: 'card-9' },
+      { value: "Cat", revealed: false, position: 'card-10' },
+      { value: "Bird", revealed: false, position: 'card-11' },
+      { value: "Fish", revealed: false, position: 'card-12' },
+      { value: "Horse", revealed: false, position: 'card-13' },
+      { value: "Sheep", revealed: false, position: 'card-14' },
+      { value: "Cow", revealed: false, position: 'card-15' },
+      { value: "Pig", revealed: false, position: 'card-16' },
     ];
 
     // Mock the generateCards function
